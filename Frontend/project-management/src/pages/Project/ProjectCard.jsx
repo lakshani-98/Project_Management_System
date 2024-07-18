@@ -8,8 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge"
-
+import { Badge } from "@/components/ui/badge";
 
 const ProjectCard = () => {
   return (
@@ -38,15 +37,15 @@ const ProjectCard = () => {
               </DropdownMenu>
             </div>
           </div>
-          <p className="text-gray-500 text-sm">
-            This is a fullstack project. 
-          </p>
+          <p className="text-gray-500 text-sm">This is a fullstack project.</p>
         </div>
 
         <div className="flex flex-wrap gap-2 items-center">
-           {
-            [1,1,1,1,].map((item)=><Badge key={item} variant="outline">javascript</Badge>)
-           }
+          {[1, 1, 1, 1].map((item) => (
+            <Badge key={item} variant="outline">
+              javascript
+            </Badge>
+          ))}
         </div>
       </div>
     </Card>
