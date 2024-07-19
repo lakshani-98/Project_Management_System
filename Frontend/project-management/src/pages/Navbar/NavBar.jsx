@@ -1,12 +1,21 @@
 import {
   Dialog,
   DialogContent,
-  DialogTrigger,
   DialogHeader,
-} from "@radix-ui/react-dialog";
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import CreateProjectForm from "../Project/CreateProjectForm";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+import { DropdownMenuIcon, PersonIcon } from "@radix-ui/react-icons";
 
 const NavBar = () => {
   return (
@@ -22,6 +31,23 @@ const NavBar = () => {
             <CreateProjectForm />
           </DialogContent>
         </Dialog>
+        <Button>Upgrade</Button>
+      </div>
+      <div className="flex gap-3 items-center">
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <Button
+              variant="outline"
+              size="icon"
+              className="rounded-full border-2 border-purple-500"
+            >
+              <PersonIcon />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem>LogOut</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </div>
   );
