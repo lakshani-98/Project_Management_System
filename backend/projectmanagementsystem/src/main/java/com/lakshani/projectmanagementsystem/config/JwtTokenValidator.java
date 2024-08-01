@@ -25,7 +25,6 @@ public class JwtTokenValidator extends OncePerRequestFilter {
       String jwt = request.getHeader(JwtConstant.JWT_HEADER);
 
       //Bearer jwt
-
       if(jwt!=null){
           jwt = jwt.substring(7);
           try{
@@ -45,11 +44,6 @@ public class JwtTokenValidator extends OncePerRequestFilter {
           }
 
       }
-
       filterChain.doFilter(request, response);
-
-
     }
-
-
 }
