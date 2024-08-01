@@ -4,9 +4,10 @@ import com.lakshani.projectmanagementsystem.config.JwtProvider;
 import com.lakshani.projectmanagementsystem.model.User;
 import com.lakshani.projectmanagementsystem.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
+@Service
 public class UserServiceImplementation implements UserService {
     @Autowired
     private UserRepository userRepository;
