@@ -2,6 +2,8 @@ package com.lakshani.projectmanagementsystem.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,8 @@ public class Issue {
     private String title;
     private String description;
     private String status;
+    private String priority;
+    private LocalDate dueDate;
 
     @ManyToOne
     private User assignee;
