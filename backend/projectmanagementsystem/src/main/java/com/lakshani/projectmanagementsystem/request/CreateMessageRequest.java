@@ -3,7 +3,8 @@ package com.lakshani.projectmanagementsystem.request;
 import lombok.Data;
 
 @Data
-public class CreateCommentRequest {
-    private Long issueId;
+public class CreateMessageRequest {
+    private Long senderId;
+    private Long projectId;
     private String content;
 }
