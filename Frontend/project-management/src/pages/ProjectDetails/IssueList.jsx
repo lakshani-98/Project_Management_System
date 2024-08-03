@@ -32,7 +32,7 @@ const IssueList = ({ status, title }) => {
 
           <CardContent>
             <div className="space-y-2">
-              <IssueCard />
+              {[1,1,1,1].map((item)=> <IssueCard key={item} /> )}
             </div>
           </CardContent>
 
