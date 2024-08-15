@@ -1,4 +1,3 @@
-import ProjectDetails from "../../pages/ProjectDetails/ProjectDetails";
 import {
   ACCEPT_INVITATION_REQUEST,
   CREATE_PROJECT_REQUEST,
