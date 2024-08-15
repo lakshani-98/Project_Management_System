@@ -7,7 +7,7 @@ const initialState = {
   chat: null,
 };
 
-const ChatReducer = (state = initialState, action) => {
+export const ChatReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.FETCH_MESSAGES_REQUEST:
     case actionTypes.SEND_MESSAGE_REQUEST:
