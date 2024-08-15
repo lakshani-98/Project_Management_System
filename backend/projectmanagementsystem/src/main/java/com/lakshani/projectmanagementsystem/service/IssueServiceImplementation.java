@@ -6,10 +6,11 @@ import com.lakshani.projectmanagementsystem.model.User;
 import com.lakshani.projectmanagementsystem.repository.IssueRepository;
 import com.lakshani.projectmanagementsystem.request.IssueRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class IssueServiceImplementation implements IssueService{
     @Autowired
     private IssueRepository issueRepository;
@@ -31,7 +32,7 @@ public class IssueServiceImplementation implements IssueService{
 
     @Override
     public List<Issue> getIssueByProjectId(Long projectId) throws Exception {
-        return issueRepository.findByProjectID(projectId);
+        return issueRepository.findByProject_id(projectId);
     }
 
     @Override

@@ -7,11 +7,13 @@ import com.lakshani.projectmanagementsystem.repository.CommentRepository;
 import com.lakshani.projectmanagementsystem.repository.IssueRepository;
 import com.lakshani.projectmanagementsystem.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CommentServiceImplementation implements CommentService{
     @Autowired
     private CommentRepository commentRepository;

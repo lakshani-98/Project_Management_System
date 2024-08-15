@@ -44,7 +44,7 @@ public class CommentController {
         return new ResponseEntity<>(res, HttpStatus.OK);
     }
 
-    @GetMapping("/{issueId")
+    @GetMapping("/{issueId}")
             public ResponseEntity <List<Comments>> getCommentsByIssueId(@PathVariable Long issueId) {
         List<Comments> comments = commentService.findCommentByIssueId(issueId);
         return new ResponseEntity<>(comments, HttpStatus.OK);
