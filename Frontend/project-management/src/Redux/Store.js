@@ -1,9 +1,9 @@
-import {combineReducers, legacy_createStore} from "redux";
+import {combineReducers, legacy_createStore, applyMiddleware} from "redux";
 import {thunk} from "redux-thunk";
 import { authReducer } from "./Auth/Reducer";
-import { projectReducer } from "./Project/Reducer";
-import { chatReducer } from "./Chat/Reducer";
-import { commentReducer } from "./Comment/Reducer";
+import chatReducer from "./Chat/Reducer";
+import projectReducer from "./Project/Reducer";
+import commentReducer from "./Comment/Reducer";
 import issueReducer from "./Issue/Reducer";
 
 const rootReducer=combineReducers({

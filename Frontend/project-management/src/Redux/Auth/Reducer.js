@@ -1,32 +1,39 @@
-import { GET_USER_REQUEST, GET_USER_SUCCESS, LOGIN_REQUEST, LOGIN_SUCCESS, REGISTER_REQUEST, REGISTER_SUCCESS } from "./ActionType"
+import {
+  GET_USER_REQUEST,
+  GET_USER_SUCCESS,
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  REGISTER_REQUEST,
+  REGISTER_SUCCESS,
+  LOGOUT,
+} from "./ActionType";
 
-const initialState={
-    user:null,
-    loading:false,
-    error:null,
-    jwt:nul1,
-    projectSize:0,
-}
+const initialState = {
+  user: null,
+  loading: false,
+  error: null,
+  jwt: null,
+  projectSize: 0,
+};
 
-export const authReducer=(state=initialState, action) => {
-    switch (action.type){
-        case REGISTER_REQUEST:
-        case LOGIN_REQUEST:
-        case GET_USER_REQUEST:
-             return {...state, loading:true, error:null};
+export const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case REGISTER_REQUEST:
+    case LOGIN_REQUEST:
+    case GET_USER_REQUEST:
+      return { ...state, loading: true, error: null };
 
-        case REGISTER_SUCCESS:
-        case LOGIN_SUCCESS:
-            return {...state, loading:false, error:null, jwt:action.payload.jwt};
+    case REGISTER_SUCCESS:
+    case LOGIN_SUCCESS:
+      return { ...state, loading: false, error: null, jwt: action.payload.jwt };
 
-        case GET_USER_SUCCESS:
-            return {...state, loading:false, error:null, jwt:action.payload};
+    case GET_USER_SUCCESS:
+      return { ...state, loading: false, error: null, jwt: action.payload };
 
-        case LOGOUT:
-            return initialState;
+    case LOGOUT:
+      return initialState;
 
-        default:
-            state;
-
-    }
-}
+    default:
+      return state;
+  }
+};

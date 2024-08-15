@@ -9,6 +9,7 @@ import {
   FETCH_PROJECTS_SUCCESS,
   INVITE_TO_PROJECT_REQUEST,
   SEARCH_PROJECT_SUCCESS,
+  CREATE_PROJECT_SUCCESS
 } from "./ActionType";
 
 const initialState = {
@@ -19,7 +20,7 @@ const initialState = {
   searchProjects: [],
 };
 
-export const projectReducer = (state = initialState, action) => {
+const projectReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_PROJECTS_REQUEST:
     case CREATE_PROJECT_REQUEST:
@@ -45,6 +46,8 @@ export const projectReducer = (state = initialState, action) => {
         return { ...state, loading: false, projects:state.projects.filter(project => project.id === action.projectId) , error: null };
 
     default:
-      state;
+      return state;
   }
 };
+
+export default projectReducer;

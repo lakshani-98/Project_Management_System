@@ -1,13 +1,12 @@
-import api from "@/config/api";
 import * as actionTypes from "./ActionType";
 
-constlinitialState = {
+const initialState = {
   comments: [],
   loading: false,
   error: null,
 };
 
-export const commentReducer = (state = initialState, action) => {
+const commentReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.CREATE_COMMENT_REQUEST:
     case actionTypes.DELETE_COMMENT_REQUEST:
@@ -52,3 +51,5 @@ export const commentReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default commentReducer;

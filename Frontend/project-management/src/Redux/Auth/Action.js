@@ -1,6 +1,6 @@
 import { API_BASE_URL } from "../../config/api";
-import { REGISTER_REQUEST, REGISTER_SUCCESS } from "./ActionType";
-import axios from "axios"
+import { REGISTER_REQUEST, REGISTER_SUCCESS, LOGIN_REQUEST, LOGIN_SUCCESS, GET_USER_REQUEST, GET_USER_SUCCESS,LOGOUT   } from "./ActionType";
+import axios from "axios";
 
 export const register = userData => async(dispatch)=> {
     dispatch({type:REGISTER_REQUEST})
@@ -22,7 +22,7 @@ export const login = userData => async(dispatch)=> {
         const {data}=await axios.post(`${API_BASE_URL}/auth/signin`, userData)
         if(data.jwt){
             localStorage.setItem("jwt", data.jwt)
-            dispatch({type: LOGIN_SUCCESS, payload:data})
+            dispatch({type:LOGIN_SUCCESS, payload:data})
         }
         console.log("login success", data)
     } catch (error){

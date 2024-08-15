@@ -1,4 +1,3 @@
-import api from "@/config/api";
 import * as actionTypes from "./ActionType";
 
 const initialState = {
@@ -20,7 +19,7 @@ const issueReducer = (state = initialState, action) => {
         loading: true,
         error: null,
       };
-    case actionTypes.FETCH_ISSUE_SUCCESS:
+    case actionTypes.FETCH_ISSUES_SUCCESS:
       return {
         ...state,
         loading: false,
