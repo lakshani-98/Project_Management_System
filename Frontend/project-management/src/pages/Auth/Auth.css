@@ -1,0 +1,62 @@
+/* Container styling for the whole login section */
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+  }
+  
+  /* Styling for the main box containing login or signup forms */
+  .box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Styling for the form container */
+  .loginBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  /* Styling for the headings */
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Styling for the toggle between sign in and sign up */
+  .box div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* Customizing the span text */
+  .box span {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Additional styling for the button */
+  .box button {
+    background-color: transparent;
+    color: #6200ea;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
