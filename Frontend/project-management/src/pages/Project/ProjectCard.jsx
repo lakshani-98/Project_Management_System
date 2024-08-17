@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
 
-const ProjectCard = () => {
+const ProjectCard = ({item}) => {
   const navigate = useNavigate();
 
   return (
@@ -24,10 +24,10 @@ const ProjectCard = () => {
                 onClick={() => navigate("/project/3")}
                 className="cursor-pointer font-bold text-lg"
               >
-                Create Ecommerce Project
+                {item.name}
               </h1>
               <DotFilledIcon />
-              <p className="text-sm txtgr">fullstack</p>
+              <p className="text-sm txtgr">{item.category}</p>
             </div>
             <div>
               <DropdownMenu>
@@ -43,13 +43,13 @@ const ProjectCard = () => {
               </DropdownMenu>
             </div>
           </div>
-          <p className="text-gray-500 text-sm">This is a fullstack project.</p>
+          <p className="text-gray-500 text-sm">{item.description}</p>
         </div>
 
         <div className="flex flex-wrap gap-2 items-center">
-          {[1, 1, 1, 1].map((item) => (
+          {item.tags.map((tag) => (
             <Badge key={item} variant="outline">
-              javascript
+              {tag}
             </Badge>
           ))}
         </div>

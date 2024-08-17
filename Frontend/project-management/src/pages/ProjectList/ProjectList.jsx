@@ -10,6 +10,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import ProjectCard from "../Project/ProjectCard";
+import { useSelector } from "react-redux";
+import { store } from "../../Redux/Store";
 
 export const tags = [
   "all",
@@ -26,11 +28,13 @@ export const tags = [
 
 const ProjectList = () => {
   const [keyword, setKeyword] = useState("");
+  const {project} = useSelector(store => store)
 
   const handleFilterChange = (section, value) => {
     console.log("value", value, section);
   };
-
+ 
+  console.log("project store", project)
   const handlesearchChange = (e) => {
     setKeyword(e.target.value);
   };
@@ -112,12 +116,12 @@ const ProjectList = () => {
                 className="40% px-9"
               />
               <MagnifyingGlassIcon className="absolute top-3"></MagnifyingGlassIcon>
-            </div>
+            </div>  
           </div>
           <div className="space-y-5 min-h-[74vh]">
             {keyword
               ? [1, 1, 1].map((item) => <ProjectCard key={item} />)
-              : [1, 1, 1, 1].map((item) => <ProjectCard key={item} />)}
+              : project.projects?.map((item) => <ProjectCard key={item.id} item={item} />)}
           </div>s
         </section>
       </div>

@@ -31,7 +31,7 @@ const projectReducer = (state = initialState, action) => {
       return { ...state, loading: true, error: null };
 
     case FETCH_PROJECTS_SUCCESS:
-      return { ...state, loading: false, projects: action.payload, error: null };
+      return { ...state, loading: false, projects: action.projects, error: null };
 
     case SEARCH_PROJECT_SUCCESS:
         return { ...state, loading: false, searchProjects: action.payload, error: null };

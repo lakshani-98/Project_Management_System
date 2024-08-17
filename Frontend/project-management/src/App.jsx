@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getUser } from "./Redux/Auth/Action";
 import { store } from "./Redux/Store"
+import { fetchProjects } from "./Redux/Project/Action";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +17,8 @@ function App() {
   console.log(auth)
 
   useEffect(()=>{
-    dispatch(getUser());
+    dispatch(getUser())
+    dispatch(fetchProjects({}))
   }, [auth.jwt]);
   return (
     <>
