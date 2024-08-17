@@ -21,17 +21,9 @@ public class UserController {
     @Autowired
     private UserService userService;
     @GetMapping("/profile")
-    public ResponseEntity<User> getUserProfile(@RequestHeader("Authorization") String authHeader)  throws Exception {
-        String jwt = authHeader.substring(7);
-        String email = JwtProvider.getEmailFromToken(jwt);
-
-        Optional<User> userOptional = Optional.ofNullable(userService.findUserByEmail(email));
-
-        if (userOptional.isPresent()) {
-            return new ResponseEntity<>(userOptional.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<User> getUserProfile(@RequestHeader("Authorization") String jwt)  throws Exception {
+        User user=userService.findUserProfileByJwt(jwt);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
 }
