@@ -9,8 +9,11 @@ import {
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useDispatch } from "react-redux";
+import { register } from "../../Redux/Auth/Action";
 
 const Signup = () => {
+  const dispatch =  useDispatch();
   const form = useForm({
     defaultValues: {
       email: "",
@@ -20,6 +23,7 @@ const Signup = () => {
   });
 
   const onSubmit = (data) => {
+    dispatch(register(data));
     console.log("sign up", data);
   };
 
@@ -37,7 +41,7 @@ const Signup = () => {
                   <Input
                     {...field}
                     type="text"
-                    className="border w-full border-purple-700 py-5 px-5"
+                    className="border w-full border-purple-700 py-5 px-5 text-black"
                     placeholder="full name..."
                   />
                 </FormControl>
@@ -54,7 +58,7 @@ const Signup = () => {
                   <Input
                     {...field}
                     type="text"
-                    className="border w-full border-purple-700 py-5 px-5"
+                    className="border w-full border-purple-700 py-5 px-5 text-black"
                     placeholder="email..."
                   />
                 </FormControl>
@@ -72,7 +76,7 @@ const Signup = () => {
                   <Input
                     {...field}
                     type="text"
-                    className="border w-full border-purple-700 py-5 px-5"
+                    className="border w-full border-purple-700 py-5 px-5 text-black"
                     placeholder="password..."
                   />
                 </FormControl>

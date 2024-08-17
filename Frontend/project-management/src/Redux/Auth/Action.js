@@ -38,10 +38,9 @@ export const getUser = () => async(dispatch)=> {
                 Authorization: `Bearer ${localStorage.getItem("jwt")}`
             }
         })
-        if(data.jwt){
-            localStorage.setItem("jwt", data.jwt)
-            dispatch({type: GET_USER_SUCCESS, payload:data})
-        }
+        
+        dispatch({ type: GET_USER_SUCCESS, payload: data });
+        
         console.log("get user success", data)
     } catch (error){
         console.log(error)
