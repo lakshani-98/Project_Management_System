@@ -61,7 +61,7 @@ public class AuthController {
         return new ResponseEntity<>(res, HttpStatus.CREATED);
     }
 
-    @PostMapping("/signing")
+    @PostMapping("/signin")
     public ResponseEntity<AuthResponse> signing(@RequestBody LoginRequest loginRequest){
 
         String username=loginRequest.getEmail();
