@@ -10,9 +10,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { deleteProject } from "../../Redux/Project/Action";
 
-const ProjectCard = ({item}) => {
+const ProjectCard = ({ item }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleDelete = () => {
+    dispatch(deleteProject({ projectId: item.id }));
+  };
 
   return (
     <Card className="p-5 w-full lg:max-w-3xl">
@@ -38,7 +44,9 @@ const ProjectCard = ({item}) => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem>Update</DropdownMenuItem>
-                  <DropdownMenuItem>Delete</DropdownMenuItem>
+                  <DropdownMenuItem onClick={handleDelete}>
+                    Delete
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
